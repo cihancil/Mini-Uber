@@ -4,6 +4,8 @@ import {
   View,
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default class ReviewStars extends Component {
   constructor(props) {
     super(props);
@@ -12,9 +14,18 @@ export default class ReviewStars extends Component {
   }
 
   render() {
+    let { stars } = this.props;
+
+    let fullStarCount = Math.floor(stars);
+    let fullStars = Array.apply(null, { length: fullStarCount })
+
+    let emptyStarCount = 5 - fullStarCount;
+    let emptyStars = Array.apply(null, { length: emptyStarCount })
+
     return (
       <View style={styles.container}>
-
+        {fullStars.map((item, index) => <Icon key={"full" + index} name={"star"} />)}
+        {emptyStars.map((item, index) => <Icon key={"empty" + index} name={"star-o"} />)}
       </View>
     );
   }
@@ -22,6 +33,6 @@ export default class ReviewStars extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: "row",
   }
 });
