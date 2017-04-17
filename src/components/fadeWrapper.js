@@ -18,6 +18,7 @@ export default class FadeWrapper extends Component {
       {
         toValue: 1,
         duration: 800,
+        useNativeDriver: true,
       }).start();
   }
 
