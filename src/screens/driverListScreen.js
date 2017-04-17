@@ -24,6 +24,10 @@ export default class DriverListScreen extends Component {
     };
   }
 
+  static navigationOptions = {
+    title: 'Driver List',
+  }
+
   componentDidMount() {
     let { store } = this.props;
     store.fetchDrivers()
@@ -68,10 +72,15 @@ export default class DriverListScreen extends Component {
     return (
       <FadeWrapper>
         <DriverListItem
+          onPress={this._handlePress.bind(this, rowData)}
           driver={rowData}
         />
       </FadeWrapper>
     )
+  }
+
+  _handlePress(driver) {
+    this.props.navigation.navigate("DriverDetail", { driver: driver });
   }
 }
 

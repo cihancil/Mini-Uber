@@ -20,6 +20,7 @@ export default class DriverListItem extends Component {
     let { driver } = this.props;
     return (
       <TouchableOpacity
+        onPress={this.props.onPress}
         style={styles.touchableContainer}
       >
         <Image

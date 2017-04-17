@@ -11,6 +11,10 @@ export default class DriverDetailScreen extends Component {
     }
   }
 
+  static navigationOptions = {
+    headerVisible: false,
+  }
+
   render() {
     return (
       <View style={styles.container}>
