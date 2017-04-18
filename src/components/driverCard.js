@@ -17,8 +17,6 @@ export default class DriverCard extends Component {
 
   render() {
     let { driver } = this.props;
-    // let { comfort, pickup, navigation, service, cleanliness } = driver.rating;
-    // console.log(service);
     return (
       <View style={styles.container}>
         <View style={styles.mainInfoContainer}>

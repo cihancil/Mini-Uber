@@ -15,7 +15,6 @@ export default class ReviewStars extends Component {
 
   render() {
     let { stars } = this.props;
-    console.log(stars)
 
     let fullStarCount = Math.floor(stars);
     let fullStars = Array.apply(null, { length: fullStarCount })

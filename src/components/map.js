@@ -26,6 +26,7 @@ export default class Map extends Component {
   }
 
   render() {
+    let { coordinate } = this.props;
     return (
       <View style={styles.container}>
         {
@@ -33,12 +34,19 @@ export default class Map extends Component {
           <MapView
             style={styles.map}
             region={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.015,
-              longitudeDelta: 0.0121,
+              latitude: coordinate.latitude - 0.005,
+              longitude: coordinate.longitude,
+              latitudeDelta: 0.02,
+              longitudeDelta: 0.02,
             }}
-          />
+          >
+            <MapView.Marker
+              coordinate={{
+                ...coordinate,
+
+              }}
+            />
+          </MapView>
         }
         {
           this.state.overlay &&

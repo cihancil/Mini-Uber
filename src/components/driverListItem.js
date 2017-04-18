@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   Text,
+  Geolocation,
 } from 'react-native';
 
 import ReviewStars from './reviewStars';
@@ -13,6 +14,7 @@ export default class DriverListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      distanceCalculated: false,
     }
   }
 
@@ -32,7 +34,10 @@ export default class DriverListItem extends Component {
         </Text>
         <View style={styles.driverInfoContainer}>
           <ReviewStars stars={this._getAverageReview(driver.rating)} />
-          <Text>{this._getDistance(driver.coordinates)} away</Text>
+          {
+            this.state.distanceCalculated &&
+            <Text>{this._getDistance(driver.coordinates)} away</Text>
+          }
         </View>
 
       </TouchableOpacity>

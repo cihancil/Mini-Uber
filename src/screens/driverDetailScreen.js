@@ -13,6 +13,12 @@ export default class DriverDetailScreen extends Component {
     super(props);
     this.state = {
     }
+    let driver = this.props.navigation.state.params.driver;
+
+    this.coordinate = {
+      latitude: driver.coordinates[0],
+      longitude: driver.coordinates[1],
+    };
   }
 
   static navigationOptions = {
@@ -21,9 +27,10 @@ export default class DriverDetailScreen extends Component {
 
   render() {
     let driver = this.props.navigation.state.params.driver;
+
     return (
       <View style={styles.container}>
-        <Map />
+        <Map coordinate={this.coordinate} />
         <DriverCard driver={driver} />
         <BackArrow
           onPress={() => {
