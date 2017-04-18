@@ -14,7 +14,6 @@ export default class DriverListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      distanceCalculated: false,
     }
   }
 
@@ -34,10 +33,6 @@ export default class DriverListItem extends Component {
         </Text>
         <View style={styles.driverInfoContainer}>
           <ReviewStars stars={this._getAverageReview(driver.rating)} />
-          {
-            this.state.distanceCalculated &&
-            <Text>{this._getDistance(driver.coordinates)} away</Text>
-          }
         </View>
 
       </TouchableOpacity>
@@ -70,10 +65,6 @@ export default class DriverListItem extends Component {
 
     let average = totalRatings / ratingCount;
     return average;
-  }
-
-  _getDistance(coordinates) {
-
   }
 }
 

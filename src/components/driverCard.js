@@ -27,8 +27,6 @@ export default class DriverCard extends Component {
           <Text style={styles.nameText}>
             {driver.name}
           </Text>
-          <View style={{ flex: 1 }} />
-          <Text style={styles.distanceText}>away</Text>
         </View>
         <Text style={styles.ratingsHeaderText}>Ratings</Text>
         <View style={styles.ratingContainer}>
