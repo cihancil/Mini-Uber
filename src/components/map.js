@@ -4,23 +4,18 @@ import {
   View,
 } from 'react-native';
 
-import Map from '../components/map';
 
-export default class DriverDetailScreen extends Component {
+export default class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
     }
   }
 
-  static navigationOptions = {
-    headerVisible: false,
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        <Map />
+
       </View>
     );
   }
