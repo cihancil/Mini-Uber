@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import { observer, inject } from 'mobx-react/native';
+import Map from '../components/map';
 
 import DriverListItem from '../components/driverListItem';
 import FadeWrapper from '../components/fadeWrapper';
@@ -32,7 +33,6 @@ export default class DriverListScreen extends Component {
     let { store } = this.props;
     store.fetchDrivers()
       .then(() => {
-        console.log(store.drivers)
         this.setState({
           fetching: false,
           dataSource: this.state.dataSource.cloneWithRows(store.drivers)
@@ -57,6 +57,12 @@ export default class DriverListScreen extends Component {
         />
       )
     }
+    /*return (
+      <View style={{ flex: 1, backgroundColor: "gray" }}>
+        <View style={{ flex: 1 }}></View>
+        <Map style={{ flex: 1, backgroundColor: "blue" }} />
+      </View>
+    )*/
     return (
       <ListView
         style={styles.container}
